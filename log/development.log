@@ -1,0 +1,455 @@
+Started GET "/" for ::1 at 2020-01-07 14:45:08 -0500
+
+PG::ConnectionBad - could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+:
+
+Started POST "/__better_errors/340f74e31a5b0934/variables" for ::1 at 2020-01-07 14:45:09 -0500
+Started POST "/__better_errors/340f74e31a5b0934/eval" for ::1 at 2020-01-07 14:45:54 -0500
+Started POST "/__better_errors/340f74e31a5b0934/eval" for ::1 at 2020-01-07 14:46:05 -0500
+  [1m[35m (2439.4ms)[0m  [1m[35mCREATE DATABASE "music_app_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1828.7ms)[0m  [1m[35mCREATE DATABASE "music_app_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-01-07 15:32:32 -0500
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+:
+
+Started POST "/__better_errors/27b5f46e47ff890b/variables" for ::1 at 2020-01-07 15:32:32 -0500
+  [1m[35m (31.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4505726345591715405)[0m
+  ↳ bin/rails:9
+  [1m[35m (6.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20200107193910)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (13.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200107193910_create_users.rb:3
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/migrate/20200107193910_create_users.rb:3
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20200107193910_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200107193910"]]
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (6.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-01-07 20:33:01.385015"], ["updated_at", "2020-01-07 20:33:01.385015"]]
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4505726345591715405)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (7.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/neevgranite/.rbenv/versions/2.5.1/bin/annotate:23
+Started GET "/" for ::1 at 2020-01-07 16:37:51 -0500
+  [1m[35m (12.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/neevgranite/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/neevgranite/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/neevgranite/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb (15.3ms)
+Completed 200 OK in 98ms (Views: 63.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-01-07 16:37:59 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2181ms (Views: 2180.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-01-07 16:38:29 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for ::1 at 2020-01-07 16:39:43 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (333.7ms)
+Completed 500 Internal Server Error in 342ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `user' for #<#<Class:0x00007f06f4197100>:0x00007f06ee002cf0>:
+  app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb___4315421888197923496_69833869761260'
+
+Started POST "/__better_errors/895402a37239d329/variables" for ::1 at 2020-01-07 16:39:43 -0500
+Started GET "/users/new" for ::1 at 2020-01-07 16:47:17 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/neevgranite/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `email' for nil:NilClass:
+  app/views/users/new.html.erb:13:in `_app_views_users_new_html_erb__1133008647732223355_70368248795760'
+  app/controllers/users_controller.rb:3:in `new'
+
+Started POST "/__better_errors/c75f920b8e669bfd/variables" for ::1 at 2020-01-07 16:47:17 -0500
+Started POST "/__better_errors/c75f920b8e669bfd/variables" for ::1 at 2020-01-07 16:50:35 -0500
+Started POST "/__better_errors/c75f920b8e669bfd/eval" for ::1 at 2020-01-07 16:50:49 -0500
+Started POST "/__better_errors/c75f920b8e669bfd/eval" for ::1 at 2020-01-07 16:50:57 -0500
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (24.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@a.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "a@a.com"], ["password_digest", "$2a$12$oGWFNMVhlvMLLuU6.Qck1uaX9fMwDGKmji4dKjDJDpCNV5EyTjUNC"], ["session_token", "mdQUNEC0-IKoHekAFy5Qqw"], ["created_at", "2020-01-07 21:54:55.300864"], ["updated_at", "2020-01-07 21:54:55.300864"]]
+  [1m[35m (36.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/users/1" for ::1 at 2020-01-07 16:55:28 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/neevgranite/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+
+SyntaxError - syntax error, unexpected ':', expecting keyword_end
+            render: new
+                  ^:
+  app/controllers/users_controller.rb:14:in `'
+
+Started POST "/__better_errors/fcdd4bdf7f83760e/variables" for ::1 at 2020-01-07 16:55:28 -0500
+Started GET "/users/1" for ::1 at 2020-01-07 16:55:49 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (402.8ms)
+Completed 500 Internal Server Error in 423ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `user' for #<#<Class:0x00007ffff169ec38>:0x00007ffff1680468>:
+  app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb__665290514455044385_70368621856300'
+
+Started POST "/__better_errors/362914668a6e5212/variables" for ::1 at 2020-01-07 16:55:50 -0500
+Started GET "/users/1" for ::1 at 2020-01-07 16:56:09 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `email' for nil:NilClass:
+  app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb__665290514455044385_70368613862900'
+
+Started POST "/__better_errors/3f367e57231451b0/variables" for ::1 at 2020-01-07 16:56:10 -0500
+Started POST "/__better_errors/3f367e57231451b0/eval" for ::1 at 2020-01-07 16:57:07 -0500
+Started GET "/users/1" for ::1 at 2020-01-07 17:03:14 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `email' for nil:NilClass:
+  app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb__665290514455044385_70368618013240'
+
+Started POST "/__better_errors/14eded8ff857fc1d/variables" for ::1 at 2020-01-07 17:03:15 -0500
+Started GET "/users/1" for ::1 at 2020-01-07 17:04:02 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `email' for nil:NilClass:
+  app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb__665290514455044385_70368612367360'
+
+Started POST "/__better_errors/9417ba962b8fd449/variables" for ::1 at 2020-01-07 17:04:02 -0500
+Started GET "/users/1" for ::1 at 2020-01-07 17:04:28 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (7.4ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `email' for nil:NilClass:
+  app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb__665290514455044385_70368620823760'
+
+Started POST "/__better_errors/768d979e14bbf279/variables" for ::1 at 2020-01-07 17:04:28 -0500
+Started GET "/users/1" for ::1 at 2020-01-07 17:05:24 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `email' for nil:NilClass:
+  app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb__665290514455044385_70368613865740'
+
+Started POST "/__better_errors/ee6ae5d51bbfa628/variables" for ::1 at 2020-01-07 17:05:25 -0500
+Started GET "/users/1" for ::1 at 2020-01-07 17:05:40 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (6.9ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `email' for nil:NilClass:
+  app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb__665290514455044385_70368615108960'
+
+Started POST "/__better_errors/d51db320604035a1/variables" for ::1 at 2020-01-07 17:05:40 -0500
+Started GET "/users/1" for ::1 at 2020-01-07 17:06:04 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/neevgranite/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (11.1ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `email' for nil:NilClass:
+  app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb___2163171238576565662_70368297333420'
+
+Started POST "/__better_errors/0f192bff0524482d/variables" for ::1 at 2020-01-07 17:06:04 -0500
+Started GET "/users/1" for ::1 at 2020-01-07 17:09:10 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/neevgranite/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (30.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 21767ms (Views: 329.9ms | ActiveRecord: 41.5ms)
+
+
+Started GET "/users/new" for ::1 at 2020-01-07 17:12:15 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `email' for nil:NilClass:
+  app/views/users/new.html.erb:13:in `_app_views_users_new_html_erb__32299339043494161_70264894046440'
+  app/controllers/users_controller.rb:3:in `new'
+
+Started POST "/__better_errors/97942e997ba8b711/variables" for ::1 at 2020-01-07 17:12:15 -0500
+Started GET "/users/new" for ::1 at 2020-01-07 17:13:03 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (438.9ms)
+Completed 500 Internal Server Error in 446ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `user' for #<#<Class:0x00007fcfa4021ae0>:0x00007fcfa400fb60>:
+  app/views/users/new.html.erb:13:in `_app_views_users_new_html_erb__32299339043494161_70264893240420'
+  app/controllers/users_controller.rb:3:in `new'
+
+Started POST "/__better_errors/ec831a7e4ec87557/variables" for ::1 at 2020-01-07 17:13:04 -0500
+Started GET "/users/new" for ::1 at 2020-01-07 17:13:57 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (519.2ms)
+Completed 500 Internal Server Error in 543ms (ActiveRecord: 4.1ms)
+
+
+
+NameError - undefined local variable or method `user' for #<#<Class:0x00007fcfa0677970>:0x00007fcfa0675fd0>
+Did you mean?  @user:
+  app/views/users/new.html.erb:13:in `_app_views_users_new_html_erb__32299339043494161_70264863041160'
+  app/controllers/users_controller.rb:4:in `new'
+
+Started POST "/__better_errors/ba9a7ff155ce9322/variables" for ::1 at 2020-01-07 17:13:58 -0500
+Started GET "/users/new" for ::1 at 2020-01-07 17:14:29 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-01-07 17:14:51 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"mXmJhErP/Q3mwyRuysONutZImUJ69Bo8dQdd5bFpWAqxAY/JEoTYhqv+yl+hgOZaDI6omJbLYxZ0FByWfx4C5Q==", "user"=>{"email"=>"neev@fake.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant User::BCrpyt:
+  app/models/user.rb:33:in `password='
+  app/controllers/users_controller.rb:8:in `create'
+
+Started POST "/__better_errors/0e6065547d1e2df6/variables" for ::1 at 2020-01-07 17:14:51 -0500
+Started GET "/users/new" for ::1 at 2020-01-07 17:16:27 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 32ms (Views: 19.2ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/users" for ::1 at 2020-01-07 17:16:45 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"JE/Nl2/UE+PpaoD2ar2SEi96xavfUCRnZYw44rMpkJMMN8vaN582aKRXbscB/vny9bz0cTNvXU1kn3mRfV7KfA==", "user"=>{"email"=>"neev@fake.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 457ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `user' for #<UsersController:0x00007fcf9cdc8a98>
+Did you mean?  @user:
+  app/controllers/users_controller.rb:10:in `create'
+
+Started POST "/__better_errors/b2eab2bf67d1ba80/variables" for ::1 at 2020-01-07 17:16:46 -0500
+Started GET "/users" for ::1 at 2020-01-07 17:17:05 -0500
+
+AbstractController::ActionNotFound - The action 'index' could not be found for UsersController:
+
+Started POST "/__better_errors/cec8e993ff882210/variables" for ::1 at 2020-01-07 17:17:05 -0500
+Started GET "/users/new" for ::1 at 2020-01-07 17:17:11 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 40ms (Views: 21.2ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/users" for ::1 at 2020-01-07 17:17:19 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"mhXZ2JDbR28cNWzPnGX+GoxIE0XGfbtPjkdpu8DU9xeybd+VyJBi5FEIgv73JpX6Vo4inypCwmWPVCjIDqOt+A==", "user"=>{"email"=>"neev@fake.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "neev@fake.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "neev@fake.com"], ["password_digest", "$2a$12$F6YQU8beet56XJr8wDGYEewsHmLauBGe88xZYpw5XmjzXMQJgoCoa"], ["session_token", "331Ekh2Hm9OyHNbYFxEOgg"], ["created_at", "2020-01-07 22:17:19.330143"], ["updated_at", "2020-01-07 22:17:19.330143"]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[35m (15.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:10
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 247ms (ActiveRecord: 17.2ms)
+
+
+Started GET "/users/2" for ::1 at 2020-01-07 17:17:19 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 26ms (Views: 21.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/session/new" for ::1 at 2020-01-07 17:18:02 -0500
+Processing by SessionsController#new as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template sessions/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/mnt/c/Users/n_gra/OneDrive/Desktop/Bootcamp_Week_7/W7D2/music_app/app/views"
+:
+  app/controllers/sessions_controller.rb:4:in `new'
+
+Started POST "/__better_errors/391a7185980c1f0e/variables" for ::1 at 2020-01-07 17:18:02 -0500
+Started GET "/session/new" for ::1 at 2020-01-07 17:22:48 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing partial shared/_errors with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/mnt/c/Users/n_gra/OneDrive/Desktop/Bootcamp_Week_7/W7D2/music_app/app/views"
+:
+  app/views/sessions/new.html.erb:3:in `_app_views_sessions_new_html_erb__4083756546636636114_70264829861380'
+  app/controllers/sessions_controller.rb:4:in `new'
+
+Started POST "/__better_errors/e96ccdd224485d92/variables" for ::1 at 2020-01-07 17:22:48 -0500
+Started GET "/session/new" for ::1 at 2020-01-07 17:22:58 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for ::1 at 2020-01-07 17:23:12 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"SffXUWcwzsO4NNY5fcThD2uS487qj79ZhTYBySwuA8hhj9EcP3vrSPUJOAgWh4rvsVTSFAawxnOEJUC64llZJw==", "user"=>{"email"=>"neev@fake.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/models/user.rb:42
+Completed 404 Not Found in 13ms (ActiveRecord: 4.8ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find User with 'id'={:email=><ActionController::Parameters {"email"=>"neev@fake.com", "password"=>"hunter2"} permitted: false>}:
+  app/models/user.rb:42:in `find_by_credentials'
+  app/controllers/sessions_controller.rb:8:in `create'
+
+Started POST "/__better_errors/1cbd26e9584a7fd1/variables" for ::1 at 2020-01-07 17:23:13 -0500
+  [1m[36mUser Load (24.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/session/new" for ::1 at 2020-01-07 17:24:44 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/neevgranite/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 274ms (Views: 269.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for ::1 at 2020-01-07 17:25:11 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"MoIAE/LdDZvLnTSBReyXgHt19GGcdCwcaEKXwavqBs8a+gZeqpYoEIag2rAur/xgobPFu3BLVTZpUdayZZ1cIA==", "user"=>{"email"=>"neev@fake.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/models/user.rb:42
+Completed 404 Not Found in 19ms (ActiveRecord: 8.4ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find User with 'id'={:email=><ActionController::Parameters {"email"=>"neev@fake.com", "password"=>"hunter2"} permitted: false>}:
+  app/models/user.rb:42:in `find_by_credentials'
+  app/controllers/sessions_controller.rb:8:in `create'
+
+Started POST "/__better_errors/c6aec28ba71f7a33/variables" for ::1 at 2020-01-07 17:25:11 -0500
+Started GET "/session/new" for ::1 at 2020-01-07 17:26:31 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for ::1 at 2020-01-07 17:26:39 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"wRsfsKuT/EWeywv0j4Yp8ckWYOJlLXyAqsLvDU8c8VfpYxn989jZztP25cXkxUIRE9BROIkSBaqr0a5+gWuruA==", "user"=>{"email"=>"neev@fake.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/models/user.rb:42
+Completed 404 Not Found in 20ms (ActiveRecord: 4.2ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find User with 'id'={:email=><ActionController::Parameters {"email"=>"neev@fake.com", "password"=>"hunter2"} permitted: false>}:
+  app/models/user.rb:42:in `find_by_credentials'
+  app/controllers/sessions_controller.rb:8:in `create'
+
+Started POST "/__better_errors/0da021c53ab6f4b1/variables" for ::1 at 2020-01-07 17:26:39 -0500
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
